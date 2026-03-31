@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@utility no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}
+
+@utility snap-x-mandatory {
+  scroll-snap-type: x mandatory;
+}
+
+@utility snap-center {
+  scroll-snap-align: center;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
