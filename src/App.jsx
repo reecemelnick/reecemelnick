@@ -1,16 +1,10 @@
 import { useState } from 'react'
-import ProjectCard from './components/ProjectCard'
 import SkillCard from './components/SkillCard'
 import EducationCard from './components/EducationCard'
+import Carousel from './components/Carousel'
 import './App.css'
 
 function App() {
-
-  const projects = [
-    { name: "QuickStyle" },
-    { name: "Hockey-Insight" },
-    { name: "Chat Application" },
-  ];
   
   const skills = [
     { name: "JavaScript" },
@@ -26,8 +20,8 @@ function App() {
 
   return (
     <>
-      <div className='flex flex-col items-start gap-4'>
-        <div className='flex flex-col items-start'>
+      <div className='flex flex-col items-center gap-4 min-h-screen overflow-x-hidden'>
+        <div className='flex flex-col self-start items-start'>
           <p>Hello, my name is</p>
           <h1 className="text-3xl font-bold">
           Reece Melnick
@@ -37,10 +31,8 @@ function App() {
         </div>
         <div className="flex flex-col items-center w-full">
           <h3 className='self-start'>--My Projects--</h3>
-          <div className='flex justify-center gap-4 mt-4'>
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
+          <div className="w-full overflow-hidden">
+            <Carousel />
           </div>
         </div>
         <div className="flex flex-col items-center w-full">
