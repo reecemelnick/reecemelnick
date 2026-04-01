@@ -8,14 +8,6 @@
   }
 }
 
-@utility snap-x-mandatory {
-  scroll-snap-type: x mandatory;
-}
-
-@utility snap-center {
-  scroll-snap-align: center;
-}
-
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
