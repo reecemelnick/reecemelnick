@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import testImage from '../assets/hack_the_break_win.png';
 
 export default function ProjectCard({project}) {
 
@@ -35,13 +36,23 @@ export default function ProjectCard({project}) {
   },[]);
 
   return (
-    <div className={`w-150 h-80 p-4 flex flex-col items-start border rounded-lg shadow-xl bg-linear-to-r ${gradient}`}>
+    <div className={`w-150 h-120 p-4 flex flex-col items-start border rounded-lg shadow-xl bg-linear-to-r ${gradient}`}>
       <h2 className="font-mono font-black">{project.name}</h2>
       <p className="font-mono text-left mt-4 mb-4">{project.description}</p>
 
-      <h2>{project.toolsUsed.map((tool, index) => 
-        <p key={index}>{tool}</p> // Should be tool card when that is made
-      )}</h2>
+      <div className='w-120 h-50 border rounded-lg shadow-xl overflow-hidden mt-2 mb-2'>
+        <img className='w-full h-full object-cover' src={testImage} alt="" />
+      </div>
+
+      <div className='flex w-full justify-start gap-4 m-auto'>
+        {project.toolsUsed.map((tool) =>
+          <div className='' key={tool.id}> 
+            {/* <p>{tool.name}</p> */}
+            <img className='w-10' src={tool.icon} alt="" />
+          </div>
+        )}
+      </div>
+        
     </div>
   )
 }
