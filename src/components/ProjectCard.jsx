@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import testImage from '../assets/hack_the_break_win.png';
+import testImage from '../assets/placeholder.png';
 
 export default function ProjectCard({project}) {
 
@@ -44,7 +44,7 @@ export default function ProjectCard({project}) {
         <img className='w-full h-full object-cover' src={testImage} alt="" />
       </div>
 
-      <div className='flex w-full justify-start gap-4 m-auto'>
+      <div className='flex w-full justify-start gap-2 m-auto'>
         {project.toolsUsed.map((tool) =>
           <div className='' key={tool.id}> 
             {/* <p>{tool.name}</p> */}

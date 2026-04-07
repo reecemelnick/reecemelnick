@@ -30,13 +30,13 @@ function App() {
           <button className='bg-red-200 shadow p-3 hover:bg-red-400 outline-2 m-1 rounded font-mono'>Checkout my resume</button>
         </div>
         <div className="flex flex-col items-center w-full">
-          <h3 className='self-start'>--My Projects--</h3>
+          <h3 className='self-start font-mono'>My Projects</h3>
           <div className="w-full overflow-hidden">
             <Carousel />
           </div>
         </div>
         <div className="flex flex-col items-center w-full">
-          <h3 className='self-start'>--My Skills--</h3>
+          <h3 className='self-start font-mono'>My Skills</h3>
           <div className='flex justify-center gap-4 mt-4'>
             {skills.map((skill, index) => (
               <SkillCard key={index} skill={skill} />
@@ -44,7 +44,7 @@ function App() {
           </div>
         </div>
         <div className="flex flex-col items-center w-full">
-            <h3 className='self-start'>--Education--</h3>
+            <h3 className='self-start font-mono'>Education</h3>
             <div className='justify-center gap-4 mt-4'>
             {education.map((education, index) => (
               <EducationCard key={index} education={education} />

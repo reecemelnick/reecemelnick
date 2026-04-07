@@ -1,15 +1,20 @@
 import jsLogo from '../assets/jsLogo.png';
+import reactLogo from '../assets/reactLogo.png';
+import tailwindLogo from '../assets/tailwindlogo.png';
+import flaskLogo from '../assets/flasklogo.png';
+import pythonLogo from '../assets/pythonlogo.png';
+import sqlliteLogo from '../assets/sqllitelogo.png';
+import cLogo from '../assets/clogo.png';
 
 const JS = { id: 1, name: "JavaScript", icon: jsLogo };
-const REACT = { id: 2, name: "React", icon: jsLogo };
-const TAILWIND = { id: 3, name: "Tailwind", icon: jsLogo };
-const FLASK = { id: 4, name: "Flask", icon: jsLogo };
-const PYTHON = { id: 5, name: "Python", icon: jsLogo };
-const SQLITE = { id: 6, name: "SqlLite", icon: jsLogo };
-const C_LANG = { id: 7, name: "C", icon: jsLogo };
-const NCURSES = { id: 8, name: "Ncurses", icon: jsLogo };
+const REACT = { id: 2, name: "React", icon: reactLogo };
+const TAILWIND = { id: 3, name: "Tailwind", icon: tailwindLogo };
+const FLASK = { id: 4, name: "Flask", icon: flaskLogo };
+const PYTHON = { id: 5, name: "Python", icon: pythonLogo };
+const SQLITE = { id: 6, name: "SqlLite", icon: sqlliteLogo };
+const C_LANG = { id: 7, name: "C", icon: cLogo };
 
-export const tools = [JS, REACT, TAILWIND, FLASK, PYTHON, SQLITE, C_LANG, NCURSES];
+export const tools = [JS, REACT, TAILWIND, FLASK, PYTHON, SQLITE, C_LANG];
 
 export const projects = [
   {
@@ -28,6 +33,6 @@ export const projects = [
     id: 3,
     name: "Chat Application",
     description: "This was a class-wide project done at BCIT where we were split into client, server, and protocol teams and has to work together to implement a chat application written in C using POSIX networking sockets.",
-    toolsUsed: [C_LANG, NCURSES],
+    toolsUsed: [C_LANG],
   },
 ];
