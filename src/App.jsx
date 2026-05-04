@@ -1,33 +1,45 @@
 import Carousel from './components/Carousel'
 import ProfileCard from './components/ProfileCard'
 import './App.css'
+import resume_reece_melnick from './assets/resume_reece_melnick.pdf'
 
 function App() {
   
   return (
     <>
-      <div className='flex flex-col items-center gap-4 min-h-screen overflow-x-hidden'>
-        <div className='flex flex-col self-start items-start font-mono'>
-          <p className='text-start'>Hello, my name is</p>
-          <h1 className="text-start text-3xl font-bold font-mono">
-          Reece Melnick
-          </h1>
-          <p className='text-start font-mono'>I am a software developer from Vancouver, BC</p>
-          <button className='bg-red-200 shadow p-3 hover:bg-red-400 outline-2 m-1 rounded font-mono'>Checkout my resume</button>
-        </div>
+      <div className='min-h-screen overflow-x-hidden px-4 py-10 text-slate-900 sm:px-6 lg:px-8'>
+        <div className='mx-auto flex w-full max-w-6xl flex-col gap-16'>
+          <header className='max-w-3xl text-left'>
+            <p className='text-sm text-slate-600'>Hello, my name is</p>
+            <h1 className="mt-1 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+              Reece Melnick
+            </h1>
+            <p className='mt-4 max-w-2xl text-base leading-7 text-slate-600'>
+              I am a software developer from Vancouver, BC.
+            </p>
+            <a
+              href={resume_reece_melnick}
+              target="_blank"
+              rel="noopener noreferrer"
+              className='mt-6 inline-flex items-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-600'
+            >
+              Checkout my resume
+            </a>
+          </header>
 
-        <div className="flex flex-col items-center w-full">
-          <h3 className='self-start font-mono'>Profile</h3>
-          <div className="w-full overflow-hidden">
-            <ProfileCard/>
-          </div>
-        </div>
+          <section className="flex flex-col gap-4 w-full">
+            <h3 className='text-sm font-semibold uppercase tracking-[0.2em] text-slate-500'>Profile</h3>
+            <div className="w-full overflow-hidden">
+              <ProfileCard/>
+            </div>
+          </section>
 
-        <div className="flex flex-col items-center w-full">
-          <h3 className='self-start font-mono'>My Projects</h3>
-          <div className="w-full overflow-hidden">
-            <Carousel />
-          </div>
+          <section className="flex flex-col gap-4 w-full">
+            <h3 className='text-sm font-semibold uppercase tracking-[0.2em] text-slate-500'>My Projects</h3>
+            <div className="w-full overflow-hidden">
+              <Carousel />
+            </div>
+          </section>
         </div>
       </div>
     </>

@@ -40,9 +40,9 @@ export default function Carousel() {
   
       </div>
 
-      <div className="flex gap-4 mb-6 justify-center mt-6">
-        <button onClick={() => scroll('left')} className="bg-white rounded-md outline-2 shadow p-3 hover:bg-gray-100">←</button>
-        <button onClick={() => scroll('right')} className="bg-white rounded-md outline-2 shadow p-3 hover:bg-gray-100">→</button>
+      <div className="flex gap-3 mb-6 justify-center mt-6">
+        <button onClick={() => scroll('left')} className="rounded-full border border-slate-500 bg-white px-4 py-2 text-slate-700 shadow-sm transition-colors hover:bg-slate-50">←</button>
+        <button onClick={() => scroll('right')} className="rounded-full border border-slate-500 bg-white px-4 py-2 text-slate-700 shadow-sm transition-colors hover:bg-slate-50">→</button>
       </div>
 
     </div>

@@ -1,8 +1,10 @@
-export default function EducationCard({education}) {
+export default function EducationCard({ degree }) {
 
   return (
-    <div className="w-220 h-20 p-4 mt-4 border rounded-lg shadow flex items-center">
-      {education.name}
-    </div>
+    <li className="rounded-xl border border-slate-500 bg-slate-50 px-4 py-3 text-slate-700 shadow-sm transition-shadow hover:shadow-md">
+      <p className="leading-snug">
+        {degree.name}
+      </p>
+    </li>
   )
 }

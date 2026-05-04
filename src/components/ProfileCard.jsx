@@ -1,50 +1,41 @@
-import { useEffect, useState } from 'react';
 import SkillCard from './SkillCard'
 import AboutMeCard from './AboutMeCard';
-import { getGradient } from '../util/GradientPicker';
+import EducationCard from './EducationCard';
 import { tools } from '../data/data';
+import { education } from '../data/data';
 
 export default function ProfileCard() {
 
-    const skills = [
-    { name: "JavaScript" },
-    { name: "React" },
-    { name: "Tailwind" },
-    { name: "Node.js" },
-  ];
-
-  const education = [
-    { name: "BCIT CST" },
-    { name: "BCIT Bachelor of Science" },
-  ];
-
-  const [gradient, setGradient] = useState("");
-  
-  useEffect(() => {
-    let g = getGradient();
-    setGradient(g);
-  },[]);
-
   return (
-    <div className={`w-full h-full p-4 sm:p-6 flex flex-col justify-start sm:justify-center items-center border rounded-lg shadow-xl bg-linear-to-r ${gradient}`}>
-
-      <div className="flex flex-col items-center w-full">
-      <h3 className="self-start font-mono text-lg">
-        About Me
-      </h3>
-      <AboutMeCard />
-    </div>
-
-      <div className="flex flex-col items-center w-full">
-          <h3 className='self-start font-mono text-lg'>My Skills</h3>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 m-4 w-full">
-            {tools.map((skill, index) => (
-              <div className="w-full sm:w-auto" key={index}>
-                <SkillCard skill={skill} />
-              </div>
-        ))}
-      </div>
+    <section className="w-full mx-auto rounded-2xl border border-slate-500 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)] md:p-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 className="mb-4 text-xl font-semibold text-slate-900">About Me</h3>
+          <AboutMeCard />
         </div>
-    </div>
+
+        <div>
+          <h3 className="mb-4 text-xl font-semibold text-slate-900">Skills & Education</h3>
+
+          <div className="mb-6">
+            <p className="mb-3 text-sm font-medium uppercase tracking-[0.18em] text-slate-500">Technical Skills</p>
+            <div className="flex flex-wrap gap-3">
+              {tools.map((skill, index) => (
+                <SkillCard skill={skill} key={index} />
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-2 text-sm font-medium uppercase tracking-[0.18em] text-slate-500">Education</p>
+            <ul className="list-none ml-0 space-y-2">
+              {education.map((degree) => (
+                <EducationCard degree={degree} key={degree.id} />
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }

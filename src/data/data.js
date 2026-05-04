@@ -16,8 +16,11 @@ const FLASK = { id: 4, name: "Flask", icon: flaskLogo };
 const PYTHON = { id: 5, name: "Python", icon: pythonLogo };
 const SQLITE = { id: 6, name: "SqlLite", icon: sqlliteLogo };
 const C_LANG = { id: 7, name: "C", icon: cLogo };
-
 export const tools = [JS, REACT, TAILWIND, FLASK, PYTHON, SQLITE, C_LANG];
+
+const BSC = { id: 1, name: "Bachelor of Science in Applied Computer Science: Network Security Applications Development Option", icon: null };
+const CST = { id: 2, name: "Computer Systems Technology: Data Communication and Networking Option", icon: null };
+export const education = [CST, BSC];
 
 export const projects = [
   {
