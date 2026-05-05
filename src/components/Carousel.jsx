@@ -14,40 +14,46 @@ export default function Carousel() {
   }, []);
 
   const scroll = (direction) => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const items = Array.from(container.querySelectorAll('.snap-center'));
-      
-      if (items.length === 0) return;
+    const container = scrollRef.current;
+    if (!container) return;
 
-      const containerCenter = container.scrollLeft + container.clientWidth / 2;
-      let currentIndex = 0;
-      let minDistance = Infinity;
-      
-      items.forEach((item, index) => {
-        const itemCenter = item.offsetLeft + item.clientWidth / 2;
-        const distance = Math.abs(itemCenter - containerCenter);
-        if (distance < minDistance) {
-          minDistance = distance;
-          currentIndex = index;
-        }
-      });
+    const items = Array.from(container.querySelectorAll('.snap-center'));
+    if (items.length === 0) return;
 
-      const nextIndex = direction === 'right' ? 
-        Math.min(currentIndex + 1, items.length - 1) : 
-        Math.max(currentIndex - 1, 0);
-      
-      if (nextIndex !== currentIndex) {
-        const nextItem = items[nextIndex];
-        const nextCenter = nextItem.offsetLeft + nextItem.clientWidth / 2;
-        const targetScroll = nextCenter - container.clientWidth / 2;
-        
-        container.scrollTo({
-          left: targetScroll,
-          behavior: 'smooth'
-        });
+    // Calculate which item is currently in view center
+    const scrollLeft = container.scrollLeft;
+    const centerX = scrollLeft + container.clientWidth / 2;
+    
+    let currentIndex = 0;
+    let minDistance = Infinity;
+    
+    items.forEach((item, index) => {
+      const itemCenter = item.offsetLeft + item.clientWidth / 2;
+      const distance = Math.abs(itemCenter - centerX);
+      if (distance < minDistance) {
+        minDistance = distance;
+        currentIndex = index;
       }
-    }
+    });
+
+    // Calculate next index
+    const nextIndex = direction === 'right' ? 
+      Math.min(currentIndex + 1, items.length - 1) : 
+      Math.max(currentIndex - 1, 0);
+    
+    // Scroll to the next item's center
+    const nextItem = items[nextIndex];
+    const nextItemCenter = nextItem.offsetLeft + nextItem.clientWidth / 2;
+    const newScrollLeft = nextItemCenter - container.clientWidth / 2;
+    
+    // Ensure we stay within bounds
+    const scrollWidth = container.scrollWidth - container.clientWidth;
+    const constrainedScroll = Math.max(0, Math.min(newScrollLeft, scrollWidth));
+    
+    container.scrollTo({
+      left: constrainedScroll,
+      behavior: 'smooth'
+    });
   };
 
   return (
