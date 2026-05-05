@@ -16,11 +16,40 @@ export default function Carousel() {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const scrollAmount = 300; // Make more adaptive
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: "smooth"
+      const container = scrollRef.current;
+      const items = Array.from(container.querySelectorAll('.snap-center'));
+      
+      if (items.length === 0) return;
+
+      // Find currently centered item
+      const containerCenter = container.scrollLeft + container.clientWidth / 2;
+      let currentIndex = 0;
+      let minDistance = Infinity;
+      
+      items.forEach((item, index) => {
+        const itemCenter = item.offsetLeft + item.clientWidth / 2;
+        const distance = Math.abs(itemCenter - containerCenter);
+        if (distance < minDistance) {
+          minDistance = distance;
+          currentIndex = index;
+        }
       });
+
+      // Move to next/previous card
+      const nextIndex = direction === 'right' ? 
+        Math.min(currentIndex + 1, items.length - 1) : 
+        Math.max(currentIndex - 1, 0);
+      
+      if (nextIndex !== currentIndex) {
+        const nextItem = items[nextIndex];
+        const nextCenter = nextItem.offsetLeft + nextItem.clientWidth / 2;
+        const targetScroll = nextCenter - container.clientWidth / 2;
+        
+        container.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
