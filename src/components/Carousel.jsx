@@ -29,7 +29,7 @@ export default function Carousel() {
 
       <div
         ref={scrollRef}
-        className="flex flex-nowrap mt-6 gap-6 overflow-x-auto no-scrollbar snap-x"
+        className="flex flex-nowrap mt-6 gap-6 overflow-x-auto no-scrollbar snap-x py-2"
       > 
       
         {projects.map((project, index) => (
