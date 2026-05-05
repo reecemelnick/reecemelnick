@@ -9,7 +9,7 @@ import quickStyleImage from '../assets/quickStyleImage.png';
 import hockeyInsightImage from '../assets/hockeyInsightImage.png'; 
 import cchatImage from '../assets/cchatImage.png'; 
 import aiAgentImage from '../assets/aiAgentImage.png';
-import fangoImage from '../assets/fangoImage.png';
+import fangoImage from '../assets/fangoImage.PNG';
 import htmlLogo from '../assets/htmlLogo.png';
 import cssLogo from '../assets/cssLogo.png';
 import postgresLogo from '../assets/postgresLogo.png';
@@ -17,7 +17,7 @@ import djangoLogo from '../assets/djangoLogo.png';
 import tsLogo from '../assets/tsLogo.png';
 import difyLogo from '../assets/difyLogo.png';
 import bcitLogo from '../assets/bcitLogo.png';
-import clinicImage from '../assets/clinicImage.png';
+import clinicImage from '../assets/clinicImage.PNG';
 
 const JS = { id: 1, name: "JavaScript", icon: jsLogo };
 const REACT = { id: 2, name: "React", icon: reactLogo };
