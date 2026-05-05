@@ -29,7 +29,7 @@ function App() {
 
           <section className="flex flex-col gap-4 w-full">
             <h3 className='text-lg font-semibold uppercase tracking-[0.2em] pb-4 font-mono text-orange-500'>Profile</h3>
-            <div className="w-full overflow-hidden">
+            <div className="w-full overflow-visible">
               <ProfileCard/>
             </div>
           </section>
