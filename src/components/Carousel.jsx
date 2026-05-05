@@ -29,11 +29,11 @@ export default function Carousel() {
 
       <div
         ref={scrollRef}
-        className="flex flex-nowrap mt-4 sm:mt-6 gap-3 sm:gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory py-2 px-2 sm:px-0"
+        className="flex flex-nowrap mt-4 sm:mt-6 gap-0 sm:gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory overscroll-x-contain py-2"
       > 
       
         {projects.map((project, index) => (
-          <div key={index} className="snap-center w-[18rem] max-w-[calc(100vw-2rem)] sm:w-auto shrink-0">
+          <div key={index} className="snap-center w-full sm:w-auto shrink-0 flex justify-center px-2 sm:px-0">
             <ProjectCard project={project} />
           </div>
         ))}

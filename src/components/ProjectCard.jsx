@@ -1,7 +1,7 @@
 export default function ProjectCard({project}) {
 
   return (
-    <article className="w-full sm:w-[24rem] md:w-[28rem] h-full overflow-hidden rounded-2xl border border-slate-500 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
+    <article className="w-full max-w-[18rem] sm:max-w-none sm:w-[24rem] md:w-[28rem] h-full overflow-hidden rounded-2xl border border-slate-500 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
       <div className="border-b border-slate-500 bg-slate-100 px-4 py-4 sm:px-5">
         <h2 className="mt-1 text-xl font-semibold text-slate-900">{project.name}</h2>
       </div>
