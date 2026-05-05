@@ -1,12 +1,14 @@
+import githubLogo from '../assets/githubLogo.png';
+
 export default function ProjectCard({project}) {
 
   return (
-    <article className="w-full max-w-[18rem] sm:max-w-none sm:w-[24rem] md:w-[28rem] h-full overflow-hidden rounded-2xl border border-slate-500 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
+    <article className="w-full max-w-[18rem] sm:max-w-none sm:w-[24rem] md:w-[28rem] h-full overflow-hidden rounded-2xl border border-slate-500 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col">
       <div className="border-b border-slate-500 bg-slate-100 px-4 py-4 sm:px-5">
         <h2 className="mt-1 text-xl font-semibold text-slate-900">{project.name}</h2>
       </div>
 
-      <div className="p-3 sm:p-5">
+      <div className="p-3 sm:p-5 flex-1">
         <p className="text-sm leading-6 text-slate-600 text-left">
           {project.description}
         </p>
@@ -28,6 +30,32 @@ export default function ProjectCard({project}) {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="border-t border-slate-500 bg-slate-50 px-4 py-3 sm:px-5 flex gap-3">
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 transition-opacity hover:opacity-70"
+            title="View on GitHub"
+          >
+            <img src={githubLogo} alt="GitHub" className="h-5 w-5" />
+            <span className="text-xs font-medium text-slate-700">Code</span>
+          </a>
+        )}
+        {project.live && (
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-xs font-medium text-slate-700 hover:text-slate-900 transition-colors"
+            title="View live project"
+          >
+            <span>→ Live</span>
+          </a>
+        )}
       </div>
     </article>
   )

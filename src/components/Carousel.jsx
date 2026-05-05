@@ -7,7 +7,6 @@ export default function Carousel() {
 
   const scrollRef = useRef(null);
 
-  // start at middle. Could change in future.
   useEffect(() => {
     const element = scrollRef.current;
     const centerOffset = (element.scrollWidth - element.clientWidth) / 2;
@@ -21,7 +20,6 @@ export default function Carousel() {
       
       if (items.length === 0) return;
 
-      // Find currently centered item
       const containerCenter = container.scrollLeft + container.clientWidth / 2;
       let currentIndex = 0;
       let minDistance = Infinity;
@@ -35,7 +33,6 @@ export default function Carousel() {
         }
       });
 
-      // Move to next/previous card
       const nextIndex = direction === 'right' ? 
         Math.min(currentIndex + 1, items.length - 1) : 
         Math.max(currentIndex - 1, 0);

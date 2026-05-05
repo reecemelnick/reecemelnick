@@ -29,6 +29,8 @@ export const projects = [
     description: "QuickSyle is a developer tool for React projects that use Tailwindcss. QuickStyle was awarded 1st overall prize at the HackTheBreak hackathon.",
     toolsUsed: [JS, REACT, TAILWIND], 
     image: quickStyleImage,
+    github: "https://github.com/kvnbanunu/quick-style",
+    live: null,
   },
   {
     id: 2,
@@ -36,6 +38,8 @@ export const projects = [
     description: "Hockey-Insight is a dashboard with advanced hockey graphics and statistics. I created this off of my love of hockey.",
     toolsUsed: [FLASK, PYTHON, REACT, SQLITE],
     image: hockeyInsightImage,
+    github: "https://github.com/reecemelnick/hocky-insight",
+    live: "https://gymrally.com/",
   },
   {
     id: 3,
@@ -43,5 +47,7 @@ export const projects = [
     description: "This was a class-wide project done at BCIT where we were split into client, server, and protocol teams and has to work together to implement a chat application written in C using POSIX networking sockets.",
     toolsUsed: [C_LANG],
     image: cchatImage,
+    github: "https://github.com/reecemelnick/project-client/tree/dev",
+    live: null,
   },
 ];
