@@ -7,11 +7,11 @@ function App() {
   
   return (
     <>
-      <div className='min-h-screen overflow-x-hidden px-4 py-10 text-slate-900 sm:px-6 lg:px-8'>
-        <div className='mx-auto flex w-full max-w-6xl flex-col gap-16'>
+      <div className='min-h-screen overflow-x-hidden px-2 py-6 text-slate-900 sm:px-6 sm:py-10 lg:px-8'>
+        <div className='mx-auto flex w-full max-w-6xl flex-col gap-10 sm:gap-16'>
           <header className='max-w-3xl text-left'>
             <p className='text-sm text-slate-600'>Hello, my name is</p>
-            <h1 className="mt-1 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-1 text-3xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
               Reece Melnick
             </h1>
             <p className='mt-4 max-w-2xl text-base leading-7 text-slate-600'>
@@ -21,7 +21,7 @@ function App() {
               href={resume_reece_melnick}
               target="_blank"
               rel="noopener noreferrer"
-              className='mt-6 inline-flex items-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-600'
+              className='mt-6 inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-600 sm:w-auto'
             >
               Checkout my resume
             </a>
