@@ -7,7 +7,7 @@ export default function AboutMeCard({}) {
         </p>
 
     <p className="text-left leading-7">
-            I also have an entrepreneurial spirit — I started an auto detailing business right out of high school and ran it for three years. Afterwards I pursued computer science at BCIT. Now in my third year, I enjoy building projects and sharpening my skills.
+            I also have an entrepreneurial spirit! I started an auto detailing business right out of high school and ran it for three years. Afterwards I pursued computer science at BCIT. Now in my third year, I enjoy building projects and sharpening my skills.
         </p>
     </div>
   )
